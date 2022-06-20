@@ -257,6 +257,12 @@ return [
             'active' => ['aerolinea*'],
         ],
         [
+            'text' => 'Pasajeros',
+            'url'  => 'pasajero',
+            'icon' => 'fas fa-fw fa-person',
+            'active' => ['pasajero*'],
+        ],
+        [
             'text' => 'Pagos',
             'url'  => 'pagos',
             'icon' => 'fas fa-fw fa-dollar-sign',

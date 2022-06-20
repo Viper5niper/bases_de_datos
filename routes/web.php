@@ -4,6 +4,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\OrdenTrabajoController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\AerolineasController;
+use App\Http\Controllers\PasajerosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,3 +43,4 @@ Route::get('/searchcliente', [ClienteController::class, 'search'])->name('client
 Route::resource('/pagos', PagoController::class);
 
 Route::resource('/aerolinea', AerolineasController::class);
+Route::resource('/pasajero', PasajerosController::class);

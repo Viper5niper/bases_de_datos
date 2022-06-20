@@ -103,14 +103,14 @@ class AerolineasController extends Controller
         }
 
         return redirect()->route('aerolinea.index')
-            ->with('message', 'cliente eliminado.')
+            ->with('message', 'Aerolinea eliminada.')
             ->with('status', 'success');
     }
 
     public function search()
     {
         return redirect()->route('aerolinea.index')
-            ->with('title', 'Busqueda de cliente')
+            ->with('title', 'Busqueda de aerolinea')
             ->with('message', 'Use el buscador para encontrar una aerolinea, o bien, registre una nueva aerolinea.')
             ->with('status', 'info');
     }

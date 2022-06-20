@@ -15,7 +15,7 @@ class Pasajero extends Migration
     {
         Schema::create('pasajeros', function (Blueprint $table) {
             // $table->id();
-            $table->integer('pasajero_id')->unsigned();
+            $table->id();
             $table->string('nombre');
             $table->string('apellido');
             $table->string('genero');
