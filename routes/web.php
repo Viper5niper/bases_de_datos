@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\OrdenTrabajoController;
 use App\Http\Controllers\PagoController;
+use App\Http\Controllers\AerolineasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,3 +40,5 @@ Route::resource('/clientes', ClienteController::class);
 Route::get('/searchcliente', [ClienteController::class, 'search'])->name('clientes.search')->middleware(['auth:sanctum', 'verified']);
 
 Route::resource('/pagos', PagoController::class);
+
+Route::resource('/aerolinea', AerolineasController::class);

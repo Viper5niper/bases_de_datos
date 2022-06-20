@@ -253,7 +253,7 @@ return [
         [
             'text' => 'Aerolineas',
             'url'  => 'aerolinea',
-            'icon' => 'fas fa-fw fa-money-bill',
+            'icon' => 'fas fa-fw fa-plane-departure',
             'active' => ['aerolinea*'],
         ],
         [

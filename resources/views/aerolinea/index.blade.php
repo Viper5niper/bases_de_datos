@@ -1,45 +1,25 @@
 @extends('adminlte::page')
 
-@section('title', 'Clientes')
+@section('title', 'Aerolinea')
 
 @section('content_header')
 @include('common.status')
 <div class="card">
 <div class="mx-3 mt-1 mb-1 pb-3">
     <div class="row mt-3">
-    <h1 class="col">Clientes</h1>
+    <h1 class="col">Aerolinea</h1>
     <div class="col">
-        <a class="btn btn-md btn-danger float-right" href="{{route('clientes.create')}}"><i class="fas fa-user-plus"></i>
-        Nuevo Cliente
+        <a class="btn btn-md btn-danger float-right" href="{{route('aerolinea.create')}}"><i class="fas fa-plane"></i>
+        Nueva Aerolinea
         </a>
     </div>
     </div>
 </div>
 </div>
-<div class="row">
-  <div class="col-6">
-    <div class="small-box bg-info">
-      <div class="inner">
-        <h3>{{$stats['sevendays']}}</h3>
-        <p>Nuevos clientes</p>
-      </div>
-      <div class="icon">
-        <i class="fas fa-user-check"></i>
-      </div>
-    </div>
-  </div>
-  <div class="col-6">
-    <div class="small-box bg-success" onclick="window.open('{{route('ordenestrabajo.contact')}}','_self')">
-      <div class="inner">
-        <h3>{{$stats['nearcalls']}}</h3>
-        <p>Mantenimientos proximos</p>
-      </div>
-      <div class="icon">
-        <i class="fas fa-phone"></i>
-      </div>
-    </div>
-  </div>
-</div>
+
+<!--
+
+ -->
 @stop
 
 @section('plugins.Datatables', true)
@@ -52,8 +32,7 @@
         @php
           $heads = [
             'ID',
-            'Nombre Cliente',
-            'Telefono',
+            'Nombre Aerolinea',
             ['label' => 'Acciones', 'no-export' => true],
           ];
           $config = [
@@ -67,28 +46,27 @@
             'order' => [[1, 'asc']],
           ];
         @endphp
-        
+
         <x-adminlte-datatable id="table1" :heads="$heads" :config="$config" head-theme="light" striped hoverable beautify with-buttons>                
-          @foreach($clientes as $cliente)
+          @foreach($aerolinea as $aerolineas)
             <tr>          
-              <td>{{$cliente->id}}</td>
-              <td>{{$cliente->nombre}}</td>
-              <td>{{($cliente->telefono)}}</td>
+              <td>{{$aerolineas->aerolinea_id}}</td>
+              <td>{{$aerolineas->nombre}}</td>
               <td><nobr>
-                <a href="{{route('ordenestrabajo.create',['idc' => $cliente->id])}}" class="btn btn-outline-success" data-toggle="tooltip" data-placement="top" title="Registrar un trabajo"><i class="fas fa-hammer"></i></a>
-                <a href="{{route('clientes.show',$cliente->id)}}" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Ver informacion detallada"><i class="fas fa-eye"></i></a>
-                <a href="{{route('clientes.edit',$cliente->id)}}" class="btn btn-outline-primary"><i class="fas fa-pen" data-toggle="tooltip" data-placement="top" title="Editar informacion"></i></a>
-                <span onclick="eliminar('{{route('clientes.destroy',$cliente->id)}}');" data-toggle="modal" data-target="#DeletedModal">
+                <a href="{{route('aerolinea.show',$aerolineas->aerolinea_id)}}" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Ver informacion detallada"><i class="fas fa-eye"></i></a>
+                <a href="{{route('aerolinea.edit',$aerolineas->aerolinea_id)}}" class="btn btn-outline-primary"><i class="fas fa-pen" data-toggle="tooltip" data-placement="top" title="Editar informacion"></i></a>
+                <span onclick="eliminar('{{route('aerolinea.destroy',$aerolineas->aerolinea_id)}}');" data-toggle="modal" data-target="#DeletedModal">
                   <a  class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Eliminar cliente"><i class="fas fa-trash"></i></a>  
                 </span>
               </nobr></td></tr>
           @endforeach
-        </x-adminlte-datatable>               
+        </x-adminlte-datatable>
+
       </div>
 
       @include('common.modaldelete',
-      ['modal_title'=> 'Eliminar Cliente',
-      'modal_message'=>'Esta seguro que desea eliminar este cliente?','btnTipo'=>'danger',
+      ['modal_title'=> 'Eliminar Aerolinea',
+      'modal_message'=>'Esta seguro que desea eliminar esta Aerolinea?','btnTipo'=>'danger',
       'ruta'=>''])
 @stop
 

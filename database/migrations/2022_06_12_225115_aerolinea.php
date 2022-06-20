@@ -13,9 +13,9 @@ class Aerolinea extends Migration
      */
     public function up()
     {
-        Schema::create('aeorlineas', function (Blueprint $table) {
+        Schema::create('aerolineas', function (Blueprint $table) {
             // $table->id();
-            $table->integer('aerolinea_id')->unsigned();
+            $table->id('aerolinea_id')->unsigned();
             $table->string('nombre');
             $table->timestamps();
         });
