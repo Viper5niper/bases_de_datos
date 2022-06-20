@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Aerolinea;
 use App\Http\Requests\StoreAerolineaRequest;
-
+use App\Http\Requests\UpdateAerolineaRequest;
 class AerolineasController extends Controller
 {
     /**
@@ -81,7 +81,7 @@ class AerolineasController extends Controller
         $aerolinea->update($validated);
 
         return redirect()->route('aerolinea.index')
-            ->with('message', 'Aerolinea editado.')
+            ->with('message', 'Aerolinea editada.')
             ->with('status', 'success');
     }
 

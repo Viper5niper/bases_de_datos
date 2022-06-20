@@ -50,13 +50,13 @@
         <x-adminlte-datatable id="table1" :heads="$heads" :config="$config" head-theme="light" striped hoverable beautify with-buttons>                
           @foreach($aerolinea as $aerolineas)
             <tr>          
-              <td>{{$aerolineas->aerolinea_id}}</td>
+              <td>{{$aerolineas->id}}</td>
               <td>{{$aerolineas->nombre}}</td>
               <td><nobr>
-                <a href="{{route('aerolinea.show',$aerolineas->aerolinea_id)}}" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Ver informacion detallada"><i class="fas fa-eye"></i></a>
-                <a href="{{route('aerolinea.edit',$aerolineas->aerolinea_id)}}" class="btn btn-outline-primary"><i class="fas fa-pen" data-toggle="tooltip" data-placement="top" title="Editar informacion"></i></a>
-                <span onclick="eliminar('{{route('aerolinea.destroy',$aerolineas->aerolinea_id)}}');" data-toggle="modal" data-target="#DeletedModal">
-                  <a  class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Eliminar cliente"><i class="fas fa-trash"></i></a>  
+                <a href="{{route('aerolinea.show',$aerolineas->id)}}" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Ver informacion detallada"><i class="fas fa-eye"></i></a>
+                <a href="{{route('aerolinea.edit',$aerolineas->id)}}" class="btn btn-outline-primary"><i class="fas fa-pen" data-toggle="tooltip" data-placement="top" title="Editar informacion"></i></a>
+                <span onclick="eliminar('{{route('aerolinea.destroy',$aerolineas->id)}}');" data-toggle="modal" data-target="#DeletedModal">
+                  <a  class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Eliminar Aerolinea"><i class="fas fa-trash"></i></a>  
                 </span>
               </nobr></td></tr>
           @endforeach
@@ -66,7 +66,7 @@
 
       @include('common.modaldelete',
       ['modal_title'=> 'Eliminar Aerolinea',
-      'modal_message'=>'Esta seguro que desea eliminar esta Aerolinea?','btnTipo'=>'danger',
+      'modal_message'=>'Esta seguro que desea eliminar Aerolinea?','btnTipo'=>'danger',
       'ruta'=>''])
 @stop
 
