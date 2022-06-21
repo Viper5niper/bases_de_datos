@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a78204e1e94aa1535a9cc6fd96c8dc4",
+    "content-hash": "3706b25159d84634faf583352bf59021",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -670,6 +670,52 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
+        },
+        {
+            "name": "flow/jsonpath",
+            "version": "0.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FlowCommunications/JSONPath.git",
+                "reference": "00aa9c361e4d0a210dd95f3c917a1e0dde3a957f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FlowCommunications/JSONPath/zipball/00aa9c361e4d0a210dd95f3c917a1e0dde3a957f",
+                "reference": "00aa9c361e4d0a210dd95f3c917a1e0dde3a957f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "peekmo/jsonpath": "dev-master",
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Flow\\JSONPath": "src/",
+                    "Flow\\JSONPath\\Test": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Frank",
+                    "email": "stephen@flowsa.com"
+                }
+            ],
+            "description": "JSONPath implementation for parsing, searching and flattening arrays",
+            "support": {
+                "issues": "https://github.com/FlowCommunications/JSONPath/issues",
+                "source": "https://github.com/FlowCommunications/JSONPath/tree/master"
+            },
+            "abandoned": "softcreatr/jsonpath",
+            "time": "2016-09-06T17:43:18+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -1958,6 +2004,60 @@
                 }
             ],
             "time": "2022-04-17T13:12:02+00:00"
+        },
+        {
+            "name": "marquine/php-etl",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leomarquine/php-etl.git",
+                "reference": "aa1ce7b9c8221449b20f01d3072984c85e382bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leomarquine/php-etl/zipball/aa1ce7b9c8221449b20f01d3072984c85e382bf8",
+                "reference": "aa1ce7b9c8221449b20f01d3072984c85e382bf8",
+                "shasum": ""
+            },
+            "require": {
+                "flow/jsonpath": "^0.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Marquine\\Etl\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leonardo Marquine",
+                    "email": "leonardomarquine@gmail.com"
+                }
+            ],
+            "description": "Extract, Transform and Load data using PHP.",
+            "keywords": [
+                "data",
+                "etl",
+                "extract",
+                "extraction",
+                "laravel",
+                "load",
+                "seed",
+                "transform",
+                "transformation"
+            ],
+            "support": {
+                "issues": "https://github.com/leomarquine/php-etl/issues",
+                "source": "https://github.com/leomarquine/php-etl/tree/v1"
+            },
+            "time": "2018-08-31T13:50:09+00:00"
         },
         {
             "name": "monolog/monolog",
