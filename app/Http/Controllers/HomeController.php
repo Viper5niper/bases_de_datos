@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Marquine\Etl\Job;
+
 class HomeController extends Controller
 {
     /**
@@ -24,5 +26,19 @@ class HomeController extends Controller
     public function index()
     {
         return redirect()->route('ordenestrabajo.index');
+    }
+
+    public function etl(){
+
+    $query = 'select * from users where status = ?';
+    $options = [
+        'bindings' => ['active']
+    ];
+
+
+    Job::start()->extract('query', $query, $options)
+    ->transform('trim', ['columns' => ['name', 'email']])
+    ->load('table', 'users');
+
     }
 }

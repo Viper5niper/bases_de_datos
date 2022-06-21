@@ -16,7 +16,6 @@ class AerolineasController extends Controller
     {
         $aerolineas = Aerolinea::get();
         return view('aerolinea.index', ['aerolinea' => $aerolineas]);
-
     }
 
     /**
@@ -31,7 +30,7 @@ class AerolineasController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     *  
      * @param  \App\Http\Requests\StoreAerolineaRequest  $request
      * @return \Illuminate\Http\Response
      */
@@ -42,7 +41,6 @@ class AerolineasController extends Controller
         Aerolinea::create($validated);
 
         return redirect()->route('aerolinea.index');
-
     }
 
     /**
