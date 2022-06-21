@@ -12,16 +12,16 @@
             <div class="row">
 
                 <h3 class="col-md-6">Info de Pasajero</h3>
-                <div class="col-md-2"> <a href="{{ route('pasajero.edit', $pasajero->id) }}" class="btn btn-primary btn-block btn-md"><span><i class="fas fa-pen"></i> Editar</span></a> </div>
-                <div class="col-md-2"> <a onclick="eliminar('{{route('pasajero.destroy', $pasajero->id)}}');" class="btn btn-danger btn-block btn-md"  data-toggle="modal"
+                <div class="col-md-2"> <a href="{{ route('pasajeros.edit', $pasajero->id) }}" class="btn btn-primary btn-block btn-md"><span><i class="fas fa-pen"></i> Editar</span></a> </div>
+                <div class="col-md-2"> <a onclick="eliminar('{{route('pasajeros.destroy', $pasajero->id)}}');" class="btn btn-danger btn-block btn-md"  data-toggle="modal"
                     data-target="#DeletedModal"><span><i class="fas fa-trash"></i> Eliminar</span></a> </div>
-                    <div class="col-md-2"> <a href="{{ route('pasajero.index') }}" class="btn btn-secondary btn-block btn-md"><span><i class="fas fa-arrow-left"></i> Regresar</span></a> </div>
+                    <div class="col-md-2"> <a href="{{ route('pasajeros.index') }}" class="btn btn-secondary btn-block btn-md"><span><i class="fas fa-arrow-left"></i> Regresar</span></a> </div>
                 </div>
             </div>
     </div>
     <div class="row">
         <div class="col-lg-12 card d-flex justify-content-center mx-auto my-3 p-5">       
-            <form class="form-horizontal" method="POST" action="{{ route('pasajero.update', $pasajero->id) }}" enctype="multipart/form-data">
+            <form class="form-horizontal" method="POST" action="{{ route('pasajeros.update', $pasajero->id) }}" enctype="multipart/form-data">
                 <div class="form-row">
 
                     <div class="form-group col-md-12">
@@ -40,8 +40,8 @@
                     </div>    
 
                     <div class="form-group col-md-12">
-                        <label for="id_ubicacion">Ubicacion de el Pasajero</label>
-                        <input type="text" name="ubicacion" class="form-control" id="id_ubicacion" value="{{old('ubicacion',$pasajero->ubicacion)}}" disabled>
+                        <label for="ubicacion_id">Ubicacion de el Pasajero</label>
+                        <input type="text" name="ubicacion" class="form-control" id="ubicacion_id" value="{{old('ubicacion',$pasajero->ubicacion)}}" disabled>
                     </div>    
 
                     <div class="form-group col-md-12">

@@ -258,9 +258,15 @@ return [
         ],
         [
             'text' => 'Pasajeros',
-            'url'  => 'pasajero',
+            'url'  => 'pasajeros',
             'icon' => 'fas fa-fw fa-person',
-            'active' => ['pasajero*'],
+            'active' => ['pasajeros*'],
+        ],
+        [
+            'text' => 'Ubicaciones',
+            'url'  => 'ubicacion',
+            'icon' => 'fas fa-fw fa-location-dot',
+            'active' => ['ubicacion*'],
         ],
         [
             'text' => 'Pagos',

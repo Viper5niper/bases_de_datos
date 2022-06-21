@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Aerolinea')
+@section('title', 'Editar Pasajero')
 
 @section('content_header')
 @include('common.status')
 
   <div class="card col-lg-12 d-flex justify-content-center p-3">
     <div class="row">
-      <h1 class="col">Editar Aerolinea</h1>
+      <h1 class="col">Editar Pasajero</h1>
       <div class="col">
         <button class="btn btn-md btn-info float-right" onclick="introJs().start();"><i
             class="fas fa-question-circle"></i>
@@ -15,7 +15,7 @@
         </button>
       </div>
       <div class="">
-        <a href="{{ route('aerolinea.index') }}" class="btn btn-md btn-secondary float-right"><i
+        <a href="{{ route('pasajeros.index') }}" class="btn btn-md btn-secondary float-right"><i
             class="fas fa-arrow-left"></i>
           Volver
         </a>
@@ -30,9 +30,9 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 card d-flex justify-content-center mx-auto p-5">       
-            <form class="form-horizontal" method="POST" action="{{ route('aerolinea.update',$aerolinea->id) }}" enctype="multipart/form-data">
+            <form class="form-horizontal" method="POST" action="{{ route('pasajeros.update',$pasajero->id) }}" enctype="multipart/form-data">
                 @method('PATCH')
-                @include('aerolinea.form',['btnText'=>'Guardar Cambios'])
+                @include('pasajeros.form',['btnText'=>'Guardar Cambios'])
             </form>
         </div>
     </div>

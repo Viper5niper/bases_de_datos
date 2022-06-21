@@ -9,7 +9,7 @@
     <div class="row mt-3">
     <h1 class="col">Pasajero</h1>
     <div class="col">
-        <a class="btn btn-md btn-danger float-right" href="{{route('pasajero.create')}}"><i class="fas fa-plane"></i>
+        <a class="btn btn-md btn-danger float-right" href="{{route('pasajeros.create')}}"><i class="fas fa-plane"></i>
           Nuevo Pasajero
         </a>
     </div>
@@ -32,7 +32,11 @@
         @php
           $heads = [
             'ID',
-            'Nombre Pasajero',
+            'Nombre',
+            'Apellido',
+            'Genero',
+            'Ubicacion',
+            'fecha_nacimiento',
             ['label' => 'Acciones', 'no-export' => true],
           ];
           $config = [
@@ -48,18 +52,18 @@
         @endphp
 
         <x-adminlte-datatable id="table1" :heads="$heads" :config="$config" head-theme="light" striped hoverable beautify with-buttons>                
-          @foreach($pasajero as $pasajeros)
+          @foreach($pasajeros as $pasajero)
             <tr>          
-              <td>{{$pasajeros->id}}</td>
-              <td>{{$pasajeros->nombre}}</td>
-              <td>{{$pasajeros->apellido}}</td>
-              <td>{{$pasajeros->genero}}</td>
-              <td>{{$pasajeros->ubicacion}}</td>
-              <td>{{$pasajeros->fecha_nacimiento}}</td>
+              <td>{{$pasajero->id}}</td>
+              <td>{{$pasajero->nombre}}</td>
+              <td>{{$pasajero->apellido}}</td>
+              <td>{{$pasajero->genero}}</td>
+              <td>{{$pasajero->ubicacion}}</td>
+              <td>{{$pasajero->fecha_nacimiento}}</td>
               <td><nobr>
-                <a href="{{route('pasajeros.show',$pasajeros->id)}}" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Ver informacion detallada"><i class="fas fa-eye"></i></a>
-                <a href="{{route('pasajeros.edit',$pasajeros->id)}}" class="btn btn-outline-primary"><i class="fas fa-pen" data-toggle="tooltip" data-placement="top" title="Editar informacion"></i></a>
-                <span onclick="eliminar('{{route('pasajero.destroy',$pasajeros->id)}}');" data-toggle="modal" data-target="#DeletedModal">
+                <a href="{{route('pasajeros.show',$pasajero->id)}}" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Ver informacion detallada"><i class="fas fa-eye"></i></a>
+                <a href="{{route('pasajeros.edit',$pasajero->id)}}" class="btn btn-outline-primary"><i class="fas fa-pen" data-toggle="tooltip" data-placement="top" title="Editar informacion"></i></a>
+                <span onclick="eliminar('{{route('pasajeros.destroy',$pasajero->id)}}');" data-toggle="modal" data-target="#DeletedModal">
                   <a  class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Eliminar Pasajero"><i class="fas fa-trash"></i></a>  
                 </span>
               </nobr></td></tr>
@@ -69,8 +73,8 @@
       </div>
 
       @include('common.modaldelete',
-      ['modal_title'=> 'Eliminar Aerolinea',
-      'modal_message'=>'Esta seguro que desea eliminar Aerolinea?','btnTipo'=>'danger',
+      ['modal_title'=> 'Eliminar Pasajero',
+      'modal_message'=>'Esta seguro que desea eliminar Pasajero?','btnTipo'=>'danger',
       'ruta'=>''])
 @stop
 

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Pasajero;
 use App\Http\Requests\StorePasajeroRequest;
-//use App\Http\Requests\UpdatePasajeroRequest;
+use App\Http\Requests\UpdatePasajeroRequest;
+use App\Models\Ubicacion;
+
 class PasajerosController extends Controller
 {
     /**
@@ -15,7 +17,7 @@ class PasajerosController extends Controller
     public function index()
     {
         $pasajeros = Pasajero::get();
-        return view('pasajeros.index', ['pasajero' => $pasajeros]);
+        return view('pasajeros.index', ['pasajeros' => $pasajeros]);
 
     }
 
@@ -26,7 +28,8 @@ class PasajerosController extends Controller
      */
     public function create()
     {
-        return view('pasajeros.create', ['pasajero' => new Pasajero]);
+        $ubicaciones =  Ubicacion::all();
+        return view('pasajeros.create', ['pasajero' => new Pasajero, 'ubicaciones' => $ubicaciones]);
     }
 
     /**
@@ -38,9 +41,7 @@ class PasajerosController extends Controller
     public function store(StorePasajeroRequest $request)
     {
         $validated = $request->validated();
-
         Pasajero::create($validated);
-
         return redirect()->route('pasajeros.index');
 
     }
@@ -64,7 +65,8 @@ class PasajerosController extends Controller
      */
     public function edit(Pasajero $pasajero)
     {
-        return view('pasajeros.edit', compact('pasajero'));
+        $ubicaciones =  Ubicacion::all();
+        return view('pasajeros.edit', compact('pasajero', 'ubicaciones'));
     }
 
     /**

@@ -15,7 +15,7 @@ class Ubicacion extends Migration
     {
         Schema::create('ubicaciones', function (Blueprint $table) {
             // $table->id();
-            $table->integer('ubicacion_id')->unsigned();
+            $table->id();
             $table->string('pais');
             $table->string('ciudad');
             $table->float('latitud');
