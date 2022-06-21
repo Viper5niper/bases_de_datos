@@ -15,7 +15,7 @@ class Avion extends Migration
     {
         Schema::create('aviones', function (Blueprint $table) {
             // $table->id();
-            $table->integer('avion_id')->unsigned();
+            $table->id();
             $table->integer('aerolinea_id');
             $table->string('modelo');
             $table->string('fabricante');

@@ -6,6 +6,8 @@ use App\Http\Controllers\PagoController;
 use App\Http\Controllers\AerolineasController;
 use App\Http\Controllers\PasajerosController;
 use App\Http\Controllers\UbicacionesController;
+use App\Http\Controllers\AvionesController;
+use App\Http\Controllers\VuelosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,3 +48,5 @@ Route::resource('/pagos', PagoController::class);
 Route::resource('/aerolinea', AerolineasController::class);
 Route::resource('/pasajeros', PasajerosController::class);
 Route::resource('/ubicacion', UbicacionesController::class);
+Route::resource('/avion', AvionesController::class);
+Route::resource('/vuelo', VuelosController::class);

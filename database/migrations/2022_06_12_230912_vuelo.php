@@ -15,7 +15,7 @@ class Vuelo extends Migration
     {
         Schema::create('vuelos', function (Blueprint $table) {
             // $table->id();
-            $table->integer('vuelo_id')->unsigned();
+            $table->id();
             $table->integer('origen_id');
             $table->integer('destino_id');
             $table->integer('avion_id');

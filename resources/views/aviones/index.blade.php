@@ -1,25 +1,21 @@
 @extends('adminlte::page')
 
-@section('title', 'Pasajeros')
+@section('title', 'Aviones')
 
 @section('content_header')
 @include('common.status')
 <div class="card">
 <div class="mx-3 mt-1 mb-1 pb-3">
     <div class="row mt-3">
-    <h1 class="col">Pasajero</h1>
+    <h1 class="col">Aviones</h1>
     <div class="col">
-        <a class="btn btn-md btn-danger float-right" href="{{route('pasajeros.create')}}"><i class="fas fa-plane"></i>
-          Nuevo Pasajero
+        <a class="btn btn-md btn-danger float-right" href="{{route('avion.create')}}"><i class="fas fa-plane"></i>
+        Nuevo Avion
         </a>
     </div>
     </div>
 </div>
 </div>
-
-<!--
-
- -->
 @stop
 
 @section('plugins.Datatables', true)
@@ -32,11 +28,10 @@
         @php
           $heads = [
             'ID',
-            'Nombre',
-            'Apellido',
-            'Genero',
-            'Ubicacion',
-            'fecha_nacimiento',
+            'Aerolinea',
+            'Modelo',
+            'Fabricante',
+            'Capacidad',
             ['label' => 'Acciones', 'no-export' => true],
           ];
           $config = [
@@ -50,31 +45,29 @@
             'order' => [[1, 'asc']],
           ];
         @endphp
-
+        
         <x-adminlte-datatable id="table1" :heads="$heads" :config="$config" head-theme="light" striped hoverable beautify with-buttons>                
-          @foreach($pasajeros as $pasajero)
+          @foreach($aviones as $avion)
             <tr>          
-              <td>{{$pasajero->id}}</td>
-              <td>{{$pasajero->nombre}}</td>
-              <td>{{$pasajero->apellido}}</td>
-              <td>{{$pasajero->genero}}</td>
-              <td>{{$pasajero->ubicacion_id}}</td>
-              <td>{{$pasajero->fecha_nacimiento}}</td>
+              <td>{{$avion->id}}</td>
+              <td>{{$avion->aerolinea_id}}</td>
+              <td>{{($avion->modelo)}}</td>
+              <td>{{($avion->fabricante)}}</td>
+              <td>{{($avion->capacidad)}}</td>
               <td><nobr>
-                <a href="{{route('pasajeros.show',$pasajero->id)}}" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Ver informacion detallada"><i class="fas fa-eye"></i></a>
-                <a href="{{route('pasajeros.edit',$pasajero->id)}}" class="btn btn-outline-primary"><i class="fas fa-pen" data-toggle="tooltip" data-placement="top" title="Editar informacion"></i></a>
-                <span onclick="eliminar('{{route('pasajeros.destroy',$pasajero->id)}}');" data-toggle="modal" data-target="#DeletedModal">
-                  <a  class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Eliminar Pasajero"><i class="fas fa-trash"></i></a>  
+                <a href="{{route('avion.show',$avion->id)}}" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Ver informacion detallada"><i class="fas fa-eye"></i></a>
+                <a href="{{route('avion.edit',$avion->id)}}" class="btn btn-outline-primary"><i class="fas fa-pen" data-toggle="tooltip" data-placement="top" title="Editar informacion"></i></a>
+                <span onclick="eliminar('{{route('avion.destroy',$avion->id)}}');" data-toggle="modal" data-target="#DeletedModal">
+                  <a  class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Eliminar cliente"><i class="fas fa-trash"></i></a>  
                 </span>
               </nobr></td></tr>
           @endforeach
-        </x-adminlte-datatable>
-
+        </x-adminlte-datatable>               
       </div>
 
       @include('common.modaldelete',
-      ['modal_title'=> 'Eliminar Pasajero',
-      'modal_message'=>'Esta seguro que desea eliminar Pasajero?','btnTipo'=>'danger',
+      ['modal_title'=> 'Eliminar Cliente',
+      'modal_message'=>'Esta seguro que desea eliminar este cliente?','btnTipo'=>'danger',
       'ruta'=>''])
 @stop
 

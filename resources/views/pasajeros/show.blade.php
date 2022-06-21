@@ -41,7 +41,7 @@
 
                     <div class="form-group col-md-12">
                         <label for="ubicacion_id">Ubicacion de el Pasajero</label>
-                        <input type="text" name="ubicacion" class="form-control" id="ubicacion_id" value="{{old('ubicacion',$pasajero->ubicacion)}}" disabled>
+                        <input type="text" name="ubicacion" class="form-control" id="ubicacion_id" value="{{old('ubicacion',$pasajero->ubicacion_id)}}" disabled>
                     </div>    
 
                     <div class="form-group col-md-12">

@@ -259,14 +259,26 @@ return [
         [
             'text' => 'Pasajeros',
             'url'  => 'pasajeros',
-            'icon' => 'fas fa-fw fa-person',
+            'icon' => 'fas fa-fw fa-person-walking-luggage',
             'active' => ['pasajeros*'],
         ],
         [
             'text' => 'Ubicaciones',
             'url'  => 'ubicacion',
-            'icon' => 'fas fa-fw fa-location-dot',
+            'icon' => 'fas fa-fw fa-globe',
             'active' => ['ubicacion*'],
+        ],
+        [
+            'text' => 'Aviones',
+            'url'  => 'avion',
+            'icon' => 'fas fa-fw fa-plane',
+            'active' => ['avion*'],
+        ],
+        [
+            'text' => 'Vuelos',
+            'url'  => 'vuelo',
+            'icon' => 'fas fa-fw fa-ticket-airline',
+            'active' => ['vuelo*'],
         ],
         [
             'text' => 'Pagos',
