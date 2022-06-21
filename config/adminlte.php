@@ -277,8 +277,14 @@ return [
         [
             'text' => 'Vuelos',
             'url'  => 'vuelo',
-            'icon' => 'fas fa-fw fa-ticket-airline',
+            'icon' => 'fas fa-fw fa-plane',
             'active' => ['vuelo*'],
+        ],
+        [
+            'text' => 'Boletos',
+            'url'  => 'boleto',
+            'icon' => 'fas fa-fw fa-ticket-airline',
+            'active' => ['boleto*'],
         ],
         [
             'text' => 'Pagos',

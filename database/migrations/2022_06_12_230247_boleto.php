@@ -15,7 +15,7 @@ class Boleto extends Migration
     {
         Schema::create('boleto', function (Blueprint $table) {
             // $table->id();
-            $table->integer('boleto_id')->unsigned();
+            $table->id();
             $table->integer('pasajero_id');
             $table->integer('vuelo_id');
             $table->datetime('llegada');
