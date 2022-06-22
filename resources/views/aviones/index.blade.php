@@ -50,7 +50,7 @@
           @foreach($aviones as $avion)
             <tr>          
               <td>{{$avion->id}}</td>
-              <td>{{$avion->aerolinea_id}}</td>
+              <td>{{$avion->aerolinea->nombre}}</td>
               <td>{{($avion->modelo)}}</td>
               <td>{{($avion->fabricante)}}</td>
               <td>{{($avion->capacidad)}}</td>

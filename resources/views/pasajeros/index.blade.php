@@ -58,7 +58,7 @@
               <td>{{$pasajero->nombre}}</td>
               <td>{{$pasajero->apellido}}</td>
               <td>{{$pasajero->genero}}</td>
-              <td>{{$pasajero->ubicacion_id}}</td>
+              <td>{{$pasajero->ubicacion->ciudad.", ".$pasajero->ubicacion->pais}}</td>
               <td>{{$pasajero->fecha_nacimiento}}</td>
               <td><nobr>
                 <a href="{{route('pasajeros.show',$pasajero->id)}}" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Ver informacion detallada"><i class="fas fa-eye"></i></a>

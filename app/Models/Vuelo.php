@@ -23,12 +23,12 @@ class Vuelo extends Model
     
     public function origen()
     {
-        return $this->belongsTo('App\Models\Origen');
+        return $this->belongsTo('App\Models\Ubicacion');
     }
     
     public function destino()
     {
-        return $this->belongsTo('App\Models\Destino');
+        return $this->belongsTo('App\Models\Ubicacion');
     }
     
     public function avion()

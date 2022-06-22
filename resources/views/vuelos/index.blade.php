@@ -54,9 +54,9 @@
           @foreach($vuelos as $vuelo)
             <tr>          
               <td>{{$vuelo->id}}</td>
-              <td>{{$vuelo->origen_id}}</td>
-              <td>{{($vuelo->destino_id)}}</td>
-              <td>{{($vuelo->avion_id)}}</td>
+              <td>{{$vuelo->origen->ciudad.", ".$vuelo->origen->pais}}</td>
+              <td>{{($vuelo->destino->ciudad.", ".$vuelo->destino->pais)}}</td>
+              <td>{{($vuelo->avion->modelo)}}</td>
               <td>{{($vuelo->despegue)}}</td>
               <td>{{($vuelo->aterrizaje)}}</td>
               <td>{{($vuelo->precio)}}</td>

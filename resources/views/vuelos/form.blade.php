@@ -5,7 +5,7 @@
         <label for="origen_id">Origen</label>
         <select name="origen_id" class="form-control">
                 @foreach ($ubicaciones as $ubicacion)
-                    <option value="{{old('ubicacion', $ubicacion->id)}}" selected>{{$ubicacion->id}}</option>
+                    <option value="{{old('ubicacion', $ubicacion->id)}}" selected>{{$ubicacion->ciudad.", ".$ubicacion->pais}}</option>
                 @endforeach
         </select>
     </div>
@@ -14,7 +14,7 @@
         <label for="destino_id">Destino</label>
         <select name="destino_id" class="form-control">
                 @foreach ($ubicaciones as $ubicacion)
-                    <option value="{{old('ubicacion', $ubicacion->id)}}" selected>{{$ubicacion->id}}</option>
+                    <option value="{{old('ubicacion', $ubicacion->id)}}" selected>{{$ubicacion->ciudad.", ".$ubicacion->pais}}</option>
                 @endforeach
         </select>
     </div>
@@ -23,7 +23,7 @@
         <label for="avion_id">Avion</label>
         <select name="avion_id" class="form-control">
                 @foreach ($aviones as $avion)
-                    <option value="{{old('avion', $avion->id)}}" selected>{{$avion->id}}</option>
+                    <option value="{{old('avion', $avion->id)}}" selected>{{$avion->modelo}}</option>
                 @endforeach
         </select>
     </div>

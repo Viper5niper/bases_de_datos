@@ -30,7 +30,7 @@
           $heads = [
             'ID',
             'Pasajero',
-            'Vuelo',
+            'N° Vuelo',
             'Llegada',
             ['label' => 'Acciones', 'no-export' => true],
           ];
@@ -50,7 +50,7 @@
           @foreach($boletos as $boleto)
             <tr>          
               <td>{{$boleto->id}}</td>
-              <td>{{$boleto->pasajero_id}}</td>
+              <td>{{$boleto->pasajero->nombre.", ".$boleto->pasajero->apellido}}</td>
               <td>{{($boleto->vuelo_id)}}</td>
               <td>{{($boleto->llegada)}}</td>
               <td><nobr>
@@ -66,7 +66,7 @@
 
       @include('common.modaldelete',
       ['modal_title'=> 'Eliminar Boleto',
-      'modal_message'=>'Esta seguro que desea eliminar este cliente?','btnTipo'=>'danger',
+      'modal_message'=>'Esta seguro que desea eliminar este Boleto?','btnTipo'=>'danger',
       'ruta'=>''])
 @stop
 

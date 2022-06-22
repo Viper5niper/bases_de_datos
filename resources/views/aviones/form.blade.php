@@ -5,7 +5,7 @@
         <label for="aerolinea_id">Aerolinea</label>
         <select name="aerolinea_id" class="form-control">
                 @foreach ($aerolineas as $aerolinea)
-                    <option value="{{old('aerolinea', $aerolinea->id)}}" selected>{{$aerolinea->id}}</option>
+                    <option value="{{old('aerolinea', $aerolinea->id)}}" selected>{{$aerolinea->nombre}}</option>
                 @endforeach
         </select>
     </div>

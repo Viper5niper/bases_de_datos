@@ -27,7 +27,7 @@
 
                     <div class="form-group col-md-6">
                     <label for="id_aerolinea">Aerolinea</label>
-                    <input type="text" name="aerolinea" class="form-control" id="id_aerolinea" value="{{old('aerolinea',$avion->aerolinea_id)}}" disabled>
+                    <input type="text" name="aerolinea" class="form-control" id="id_aerolinea" value="{{old('aerolinea',$avion->aerolinea->nombre)}}" disabled>
                     </div>
                 
                     <div class="form-group col-md-6">
