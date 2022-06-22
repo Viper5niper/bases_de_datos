@@ -29,6 +29,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/etl', [App\Http\Controllers\HomeController::class, 'etl'])->name('etl');
 
 Route::resource('/ordenestrabajo', OrdenTrabajoController::class);
 Route::get('/ordenestrabajo/{ordenestrabajo}/print', [OrdenTrabajoController::class, 'print'])->name('ordenestrabajo.print');
