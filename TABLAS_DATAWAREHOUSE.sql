@@ -44,15 +44,15 @@ COMMENT ON TABLE "Historico_Vuelos".registro_vuelos
 
 -- extract select
 
-SELECT vu.*, ae.nombre as nombre_aerolinea, ori.pais as pais_origen, ori.ciudad as ciudad_origen, 
-des.pais as pais_destino, des.ciudad as ciudad_destino, 
-av.fabricante as fabricante_avion, av.modelo as modelo_avion, av.capacidad as capacidad_avion, 
-pa.nombre as nombre_pasajero, pa.apellido as apellido_pasajero, pa.genero as genero_pasajero,
-bo.llegada as llegada_pasajero,
+SELECT vu.*, ae.nombre AS nombre_aerolinea, ori.pais AS pais_origen, ori.ciudad AS ciudad_origen, 
+des.pais AS pais_destino, des.ciudad AS ciudad_destino, 
+av.fabricante AS fabricante_avion, av.modelo AS modelo_avion, av.capacidad AS capacidad_avion, 
+pa.nombre AS nombre_pasajero, pa.apellido AS apellido_pasajero, pa.genero AS genero_pasajero,
+bo.llegada AS llegada_pasajero
 FROM vuelos vu 
-INNER JOIN ubicaciones ori ON ori.ubicacion_id = vu.origen_id
-INNER JOIN ubicaciones des ON des.ubicacion_id = vu.destino_id
-INNER JOIN aviones av ON av.avion_id = vu.avion_id
-INNER JOIN boleto bo ON bo.vuelo_id = vu.vuelo_id
-INNER JOIN pasajeros pa ON bo.pasajero_id = pa.pasajero_id
-INNER JOIN aerolineas ae ON ae.aerolinea_id = av.aerolinea_id
+INNER JOIN ubicaciones ori ON ori.id = vu.origen_id
+INNER JOIN ubicaciones des ON des.id = vu.destino_id
+INNER JOIN aviones av ON av.id = vu.avion_id
+INNER JOIN boleto bo ON bo.vuelo_id = vu.id
+INNER JOIN pasajeros pa ON pa.id = bo.pasajero_id
+INNER JOIN aerolineas ae ON ae.id = av.aerolinea_id
