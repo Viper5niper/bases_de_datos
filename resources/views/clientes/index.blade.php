@@ -9,7 +9,7 @@
     <div class="row mt-3">
     <h1 class="col">Clientes</h1>
     <div class="col">
-        <a class="btn btn-md btn-danger float-right" href="{{route('clientes.create')}}"><i class="fas fa-user-plus"></i>
+        <a class="btn btn-md btn-primary float-right" href="{{route('clientes.create')}}"><i class="fas fa-user-plus"></i>
         Nuevo Cliente
         </a>
     </div>

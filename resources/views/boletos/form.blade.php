@@ -5,13 +5,13 @@
         <label for="pasajero_id">Pasajero</label>
         <select name="pasajero_id" class="form-control">
                 @foreach ($pasajeros as $pasajero)
-                    <option value="{{old('pasajero', $pasajero->id)}}" selected>{{$pasajero->id}}</option>
+                    <option value="{{old('pasajero', $pasajero->id)}}" selected>{{$pasajero->nombre.' '.$pasajero->apellido}}</option>
                 @endforeach
         </select>
     </div>
 
     <div class="form-group col-md-6">
-        <label for="vuelo_id">Vuelo</label>
+        <label for="vuelo_id">N° Vuelo</label>
         <select name="vuelo_id" class="form-control">
                 @foreach ($vuelos as $vuelo)
                     <option value="{{old('vuelo', $vuelo->id)}}" selected>{{$vuelo->id}}</option>

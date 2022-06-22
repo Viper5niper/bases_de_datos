@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Taller RS',
+    
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,8 +45,7 @@ return [
     |
     */
 
-    'logo' => 'Taller <b>RS</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/logoRS.jpg',
+
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -127,7 +126,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-light-maroon elevation-4',
+    'classes_sidebar' => 'sidebar-light-blue elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-gray-dark navbar-dark',
     'classes_topnav_nav' => 'navbar-expand',
@@ -237,19 +236,7 @@ return [
         ],
 
         // Sidebar items:
-        ['header' => 'TALLER'],
-        [
-            'text' => 'Trabajos Realizados',
-            'url'  => 'ordenestrabajo',
-            'icon' => 'fas fa-fw fa-wrench',
-            'active' => ['ordenestrabajo*'],
-        ],
-        [
-            'text' => 'Cartera de Clientes',
-            'url'  => 'clientes',
-            'icon' => 'fas fa-fw fa-users',
-            'active' => ['clientes*'],
-        ],
+
         [
             'text' => 'Aerolineas',
             'url'  => 'aerolinea',
@@ -259,7 +246,7 @@ return [
         [
             'text' => 'Pasajeros',
             'url'  => 'pasajeros',
-            'icon' => 'fas fa-fw fa-person-walking-luggage',
+            'icon' => 'fas fa-fw fa-users',
             'active' => ['pasajeros*'],
         ],
         [
@@ -283,14 +270,8 @@ return [
         [
             'text' => 'Boletos',
             'url'  => 'boleto',
-            'icon' => 'fas fa-fw fa-ticket-airline',
+            'icon' => 'fas fa-fw fa-plane',
             'active' => ['boleto*'],
-        ],
-        [
-            'text' => 'Pagos',
-            'url'  => 'pagos',
-            'icon' => 'fas fa-fw fa-dollar-sign',
-            'active' => ['pagos*'],
         ],
         // ['header' => 'CONFIGURACION'],
         // [

@@ -23,7 +23,7 @@ class Avion extends Model
         return $this->hasMany('App\Models\Vuelo');
     }
 
-    public function aerolineas()
+    public function aerolinea()
     {
         return $this->belongsTo('App\Models\Aerolinea');
     }

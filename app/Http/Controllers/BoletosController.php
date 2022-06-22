@@ -74,7 +74,7 @@ class BoletosController extends Controller
         $pasajeros =  Pasajero::all();
         $vuelos = Vuelo::all();
 
-        return view('boleto.edit', compact('boleto', 'pasajeros', 'vuelos'));
+        return view('boletos.edit', compact('boleto', 'pasajeros', 'vuelos'));
     }
 
     /**

@@ -26,11 +26,11 @@
 
                     <div class="form-group col-md-6">
                     <label for="id_pasajero">Nombre del Pasajero</label>
-                    <input type="text" name="pasajero" class="form-control" id="id_pasajero" value="{{old('pasajero',$boleto->pasajero_id)}}" disabled>
+                    <input type="text" name="pasajero" class="form-control" id="id_pasajero" value="{{old('pasajero',$boleto->pasajero->nombre.' '.$boleto->pasajero->apellido)}}" disabled>
                     </div>
                 
                     <div class="form-group col-md-6">
-                    <label for="id_vuelo">Vuelo</label>
+                    <label for="id_vuelo">N° Vuelo</label>
                     <input type="text" name="vuelo" class="form-control" id="id_vuelo" value="{{old('vuelo',$boleto->vuelo_id)}}" disabled>
                     </div>
                 

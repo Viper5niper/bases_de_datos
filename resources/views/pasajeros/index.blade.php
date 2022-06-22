@@ -9,7 +9,7 @@
     <div class="row mt-3">
     <h1 class="col">Pasajero</h1>
     <div class="col">
-        <a class="btn btn-md btn-danger float-right" href="{{route('pasajeros.create')}}"><i class="fas fa-plane"></i>
+        <a class="btn btn-md btn-primary float-right" href="{{route('pasajeros.create')}}"><i class="fas fa-plane"></i>
           Nuevo Pasajero
         </a>
     </div>
@@ -58,7 +58,7 @@
               <td>{{$pasajero->nombre}}</td>
               <td>{{$pasajero->apellido}}</td>
               <td>{{$pasajero->genero}}</td>
-              <td>{{$pasajero->ubicacion_id}}</td>
+              <td>{{$pasajero->ubicacion->ciudad.", ".$pasajero->ubicacion->pais}}</td>
               <td>{{$pasajero->fecha_nacimiento}}</td>
               <td><nobr>
                 <a href="{{route('pasajeros.show',$pasajero->id)}}" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Ver informacion detallada"><i class="fas fa-eye"></i></a>

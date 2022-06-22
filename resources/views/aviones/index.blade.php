@@ -9,7 +9,7 @@
     <div class="row mt-3">
     <h1 class="col">Aviones</h1>
     <div class="col">
-        <a class="btn btn-md btn-danger float-right" href="{{route('avion.create')}}"><i class="fas fa-plane"></i>
+        <a class="btn btn-md btn-primary float-right" href="{{route('avion.create')}}"><i class="fas fa-plane"></i>
         Nuevo Avion
         </a>
     </div>
@@ -50,7 +50,7 @@
           @foreach($aviones as $avion)
             <tr>          
               <td>{{$avion->id}}</td>
-              <td>{{$avion->aerolinea_id}}</td>
+              <td>{{$avion->aerolinea->nombre}}</td>
               <td>{{($avion->modelo)}}</td>
               <td>{{($avion->fabricante)}}</td>
               <td>{{($avion->capacidad)}}</td>
