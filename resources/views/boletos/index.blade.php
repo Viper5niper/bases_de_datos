@@ -9,7 +9,7 @@
     <div class="row mt-3">
     <h1 class="col">Boletos</h1>
     <div class="col">
-        <a class="btn btn-md btn-danger float-right" href="{{route('boleto.create')}}"><i class="fas fa-ticket"></i>
+        <a class="btn btn-md btn-primary float-right" href="{{route('boleto.create')}}"><i class="fas fa-ticket"></i>
         Nuevo Boleto
         </a>
     </div>

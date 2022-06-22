@@ -9,7 +9,7 @@
       <div class="row mt-3">
       <h1 class="col">Ubicaciones</h1>
       <div class="col">
-          <a class="btn btn-md btn-danger float-right" href="{{route('ubicacion.create')}}"><i class="fa-solid fa-location-plus"></i>
+          <a class="btn btn-md btn-primary float-right" href="{{route('ubicacion.create')}}"><i class="fa-solid fa-location-plus"></i>
           Nueva Ubicacion
           </a>
       </div>
