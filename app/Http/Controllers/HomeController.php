@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Marquine\Etl\Job;
-use Marquine\Etl\Etl;
+
+use DB;
 
 class HomeController extends Controller
 {
@@ -45,16 +46,10 @@ class HomeController extends Controller
     INNER JOIN aerolineas ae ON ae.id = av.aerolinea_id
     ';
 
-    $options = [
-            'columns' => [
-            'nombre_aerolinea' => 1
-        ]
-    ];
+    Job::start()->extract('query', $query)
+    ->transform('trim', ['columns' => ['nombre_aerolinea']])
+    ->load('table', 'registro_vuelos');
 
-    $jobs = new Job;
-
-    $jobs->start()->extract('csv', 'C:\Users\PC\Downloads\Libro1.csv',$options)
-    ->load('table','registro_vuelos');
 
     }
 }
