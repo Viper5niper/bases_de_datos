@@ -16,20 +16,22 @@ class RegistroVuelos extends Migration
         Schema::create('registro_vuelos', function (Blueprint $table) {
             // $table->id();
             $table->id();
-            $table->integer('vuelo_id');
-            $table->string('aerolinea_nombre');
-            $table->string('pais_destino');
-            $table->string('ciudad_destino');
-            $table->float('latitud');
-            $table->float('longitud');
-            $table->string('nombre_pasajero');
-            $table->string('apellido_pasajero');
-            $table->string('genero');
-            $table->timestamp('llegada');
-            $table->string('fabricante_avion');
-            $table->string('modelo_avion');
-            $table->integer('capacidad');
-            $table->timestamp('fecha_carga');
+            $table->integer('vuelo_id')->nullable();
+            $table->string('nombre_aerolinea')->nullable();
+            $table->string('pais_destino')->nullable();
+            $table->string('ciudad_destino')->nullable();
+            $table->float('latitud')->nullable();
+            $table->float('longitud')->nullable();
+            $table->string('pais_origen')->nullable();
+            $table->string('ciudad_origen')->nullable();
+            $table->string('nombre_pasajero')->nullable();
+            $table->string('apellido_pasajero')->nullable();
+            $table->string('genero')->nullable();
+            $table->timestamp('llegada')->nullable();
+            $table->string('fabricante_avion')->nullable();
+            $table->string('modelo_avion')->nullable();
+            $table->integer('capacidad')->nullable();
+            $table->timestamp('fecha_carga')->nullable();
         });
     }
 
@@ -40,6 +42,6 @@ class RegistroVuelos extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('registro_vuelos');
     }
 }

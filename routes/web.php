@@ -41,5 +41,6 @@ Route::resource('/avion', AvionesController::class);
 Route::resource('/vuelo', VuelosController::class);
 Route::resource('/boleto', BoletosController::class);
 //Route::resource('/etl', EtlController::class);
+Route::get('/etl', [EtlController::class, 'index'])->name('etl.index');
 Route::get('/etl/datawarehouse', [EtlController::class, 'etl'])->name('etl.datawarehouse');
 Route::get('/etl/etl_archivo', [EtlController::class, 'etl_base'])->name('etl.etl_base');

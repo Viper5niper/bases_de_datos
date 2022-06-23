@@ -32,30 +32,17 @@
 <div class="card">
 <div class="form-row mt-3">
     <div class="form-group col-md-3">
-            <a class="btn btn-md btn-primary float-right" href="{{ route('etl.dataware') }}">
+            <a class="btn btn-md btn-primary float-right" href="{{ route('etl.datawarehouse') }}">
                 GENERAR DATA WAREHOUSE
             </a>
     </div>
 
     <div class="form-group col-md-5">
             <a class="btn btn-md btn-primary float-right" href="{{ route('etl.etl_base') }}">
-                GUARDAR
+                GENERAR UBICACIONES A PARTIR DE CSV
             </a>
     </div>
 
-    <div class="form-group col-md-5 offset-1">
-          <label for="tabla">Tablas</label>
-            <select class="form-control" name="tabla">
-              <option value="1">Tabla1</option>
-              <option value="2">Tabla2</option>
-              <option value="3">Tabla3</option>
-            </select>
-    </div>
-
-    <div class="form-group col-md-5">
-            <label for="formFile" class="form-label">Subir Archivo</label>
-            <input class="form-control" type="file" id="formFile">
-    </div>
 </div>
 </div>
 

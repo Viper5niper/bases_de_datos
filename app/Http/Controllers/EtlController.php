@@ -50,6 +50,10 @@ class EtlController extends Controller
         Job::start()->extract('query', $query)
             //->transform('trim', ['columns' => ['nombre_aerolinea']])
             ->load('table', 'registro_vuelos');
+
+        return redirect()->route('etl.index')
+        ->with('message', 'Data Warehouse llenada con exito.')
+        ->with('status', 'success');
     }
 
     public function etl_base()
@@ -70,6 +74,10 @@ class EtlController extends Controller
 
         $jobs->start()->extract('csv', $ruta_archivo, $options)
             ->load('table', $table);
+
+        return redirect()->route('ubicacion.index')
+        ->with('message', 'Tabla de ubicaciones llenada con exito.')
+        ->with('status', 'success');
     }
 
     /**
