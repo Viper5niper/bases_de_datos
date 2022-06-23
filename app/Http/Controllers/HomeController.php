@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Marquine\Etl\Job;
 
+use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -44,14 +46,10 @@ class HomeController extends Controller
     INNER JOIN aerolineas ae ON ae.id = av.aerolinea_id
     ';
 
-    $options = [
-
-    ];
-
-
     Job::start()->extract('query', $query)
-    ->transform('trim', ['columns' => ['nombre_aerolinea', 'nombre_aerolinea']])
+    ->transform('trim', ['columns' => ['nombre_aerolinea']])
     ->load('table', 'registro_vuelos');
+
 
     }
 }
