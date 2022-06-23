@@ -8,7 +8,7 @@ return [
     // Currently supported databases: SQLite, MySQL, PostgreSQL
     'database' => [
 
-        'default' => config('database.default'),
+        'default' => config('database.default2'),
 
         'connections' => config('database.connections'),
     ],
