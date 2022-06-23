@@ -13,6 +13,11 @@
         Nuevo Vuelo
         </a>
     </div>
+    <div class="col">
+        <a class="btn btn-md btn-primary float-right" href="{{route('vuelos.retrasados')}}"><i class="fas fa-ticket-airline"></i>
+        Pasajeros atrasados
+        </a>
+    </div>
     </div>
 </div>
 </div>
