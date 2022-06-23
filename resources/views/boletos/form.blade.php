@@ -21,7 +21,7 @@
 
     <div class="form-group col-md-12">
         <label for="id_llegada">Llegada</label>
-        <input type="text" name="llegada" class="form-control @error('llegada') is-invalid 
+        <input type="date" name="llegada" class="form-control @error('llegada') is-invalid 
         @enderror" id="id_llegada" placeholder="30/06/2022 07:00:00" value="{{old('llegada',$boleto->llegada)}}"
             onKeyUp="n_llegada_mask(this);" required>
         @error('llegada')
@@ -29,6 +29,6 @@
         @enderror
     </div>
 
-    <div class="form-button pt-4 col-md-12"> <button type="submit" class="btn btn-danger btn-block btn-lg"><span>{{$btnText}}</span></button> </div>
+    <div class="form-button pt-4 col-md-12"> <button type="submit" class="btn btn-success btn-block btn-lg"><span>{{$btnText}}</span></button> </div>
 
 </div>

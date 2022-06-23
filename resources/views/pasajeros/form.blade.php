@@ -41,7 +41,7 @@
 
     <div class="form-group col-md-12">
         <label for="id_nacimiento">Fecha de Nacimiento</label>
-        <input type="text" name="fecha_nacimiento" class="form-control @error('fecha_nacimiento') is-invalid 
+        <input type="date" name="fecha_nacimiento" class="form-control @error('fecha_nacimiento') is-invalid 
         @enderror" id="id_nacimiento" placeholder="1985-05-23" value="{{old('fecha_nacimiento',$pasajero->fecha_namiento)}}"
             onKeyUp="toUpperCaseField(this);n_nombre_mask(this);" required>
         @error('fecha_nacimiento')
@@ -49,6 +49,6 @@
         @enderror
     </div>
 
-    <div class="form-button pt-4 col-md-12"> <button type="submit" class="btn btn-danger btn-block btn-lg"><span>{{$btnText}}</span></button> </div>
+    <div class="form-button pt-4 col-md-12"> <button type="submit" class="btn btn-success btn-block btn-lg"><span>{{$btnText}}</span></button> </div>
 
 </div>

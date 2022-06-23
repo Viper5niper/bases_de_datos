@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect()->route('ordenestrabajo.index');
+        return redirect()->route('aerolinea.index');
     }
 
     public function etl()

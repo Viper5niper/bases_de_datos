@@ -9,6 +9,7 @@ use App\Http\Controllers\UbicacionesController;
 use App\Http\Controllers\AvionesController;
 use App\Http\Controllers\VuelosController;
 use App\Http\Controllers\BoletosController;
+use App\Http\Controllers\EtlController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('ordenestrabajo.index');
+    return redirect()->route('aerolinea.index');
 });
 
 Auth::routes();
@@ -53,3 +54,4 @@ Route::resource('/ubicacion', UbicacionesController::class);
 Route::resource('/avion', AvionesController::class);
 Route::resource('/vuelo', VuelosController::class);
 Route::resource('/boleto', BoletosController::class);
+Route::resource('/etl', EtlController::class);

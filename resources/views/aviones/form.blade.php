@@ -32,7 +32,7 @@
 
     <div class="form-group col-md-6">
         <label for="capacidad_id">Capacidad</label>
-        <input type="text" name="capacidad" class="form-control @error('capacidad') is-invalid 
+        <input type="number" name="capacidad" class="form-control @error('capacidad') is-invalid 
         @enderror" id="capacidad_id" placeholder="Boeing 737" value="{{old('capacidad',$avion->capacidad)}}"
             onKeyUp="n_capacidad_mask(this);" required>
         @error('capacidad')
@@ -40,6 +40,6 @@
         @enderror
     </div>
 
-    <div class="form-button pt-4 col-md-12"> <button type="submit" class="btn btn-danger btn-block btn-lg"><span>{{$btnText}}</span></button> </div>
+    <div class="form-button pt-4 col-md-12"> <button type="submit" class="btn btn-success btn-block btn-lg"><span>{{$btnText}}</span></button> </div>
 
 </div>

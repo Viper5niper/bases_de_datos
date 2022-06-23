@@ -14,7 +14,7 @@ return [
     |
     */
 
-    
+    'title' => 'Reserva Vuelos',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -44,8 +44,8 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
     |
     */
-
-
+    'logo' => '<b>Reserva de vuelos</b>',
+    'logo_img' => 'vendor/adminlte/dist/img/airplanes.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -121,7 +121,7 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => 'text-danger',
+    'classes_brand' => 'text-black',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
@@ -273,6 +273,12 @@ return [
             'icon' => 'fas fa-fw fa-plane',
             'active' => ['boleto*'],
         ],
+        [
+            'text' => 'ETL',
+            'url'  => 'etl',
+            'icon' => 'fas fa-fw fa-plane',
+            'active' => ['etl*'],
+        ],
         // ['header' => 'CONFIGURACION'],
         // [
         //     'text' => 'Ajustes del Sistema',
@@ -316,6 +322,28 @@ return [
     */
 
     'plugins' => [
+
+        'DateRangePicker' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/moment/moment.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/daterangepicker/daterangepicker.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/daterangepicker/daterangepicker.css',
+                ],
+            ],
+        ],
+
         'Datatables' => [
             'active' => true,
             'files' => [

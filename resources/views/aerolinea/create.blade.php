@@ -9,12 +9,6 @@
     <div class="row">
       <h1 class="col">Nuevo Aerolinea</h1>
       <div class="col">
-        <button class="btn btn-md btn-info float-right" onclick="introJs().start();"><i
-            class="fas fa-question-circle"></i>
-          Ayuda
-        </button>
-      </div>
-      <div class="">
         <a href="{{ route('aerolinea.index') }}" class="btn btn-md btn-secondary float-right"><i
             class="fas fa-arrow-left"></i>
           Volver
