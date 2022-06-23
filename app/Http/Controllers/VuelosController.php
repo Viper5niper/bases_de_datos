@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateVueloRequest;
 use App\Models\Avion;
 use App\Models\Ubicacion;
 
+use DB;
+
 class VuelosController extends Controller
 {
     /**
@@ -113,6 +115,34 @@ class VuelosController extends Controller
         return redirect()->route('vuelo.index')
             ->with('message', 'vuelo eliminado.')
             ->with('status', 'success');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function retrasados()
+    {   
+        $today = \Carbon\Carbon::now()->toDateTimeString();
+        $date = \Carbon\Carbon::now()->addHours(1)->toDateTimeString();
+
+
+        /*
+        "SELECT b.* FROM vuelos v
+        INNER JOIN boleto b ON b.vuelo_id = v.id
+        WHERE DESPEGUE BETWEEN '2022-06-23 17:00:00' AND '2022-06-24 18:00:00' 
+        AND b.llegada IS NULL;"
+         */
+
+        $boletosatrasados = DB::select(DB::raw("SELECT b.* FROM vuelos v
+        INNER JOIN boleto b ON b.vuelo_id = v.id
+        WHERE DESPEGUE BETWEEN '$today' AND '$date' 
+        AND b.llegada IS NULL;"));
+
+        //dd($boletosatrasados);
+
+        return view('boletos.atrasados', ['boletos' => $boletosatrasados]);
     }
 
     public function search()

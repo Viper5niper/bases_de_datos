@@ -39,6 +39,7 @@ Route::resource('/pasajeros', PasajerosController::class);
 Route::resource('/ubicacion', UbicacionesController::class);
 Route::resource('/avion', AvionesController::class);
 Route::resource('/vuelo', VuelosController::class);
+Route::get('/vuelosatrasados', [VuelosController::class, 'retrasados'])->name('vuelos.retrasados');
 Route::resource('/boleto', BoletosController::class);
 //Route::resource('/etl', EtlController::class);
 Route::get('/etl', [EtlController::class, 'index'])->name('etl.index');
