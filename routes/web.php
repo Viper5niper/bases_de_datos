@@ -30,7 +30,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/etl', [App\Http\Controllers\HomeController::class, 'etl'])->name('etl');
 
 Route::resource('/ordenestrabajo', OrdenTrabajoController::class);
 Route::get('/ordenestrabajo/{ordenestrabajo}/print', [OrdenTrabajoController::class, 'print'])->name('ordenestrabajo.print');
@@ -54,4 +53,6 @@ Route::resource('/ubicacion', UbicacionesController::class);
 Route::resource('/avion', AvionesController::class);
 Route::resource('/vuelo', VuelosController::class);
 Route::resource('/boleto', BoletosController::class);
-Route::resource('/etl', EtlController::class);
+//Route::resource('/etl', EtlController::class);
+Route::get('/etl/dataware', [EtlController::class, 'etl'])->name('etl.dataware');
+Route::get('/etl/etl_archivo', [EtlController::class, 'etl_base'])->name('etl.etl_base');

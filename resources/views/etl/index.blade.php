@@ -32,13 +32,13 @@
 <div class="card">
 <div class="form-row mt-3">
     <div class="form-group col-md-3">
-            <a class="btn btn-md btn-primary float-right" href="#">
+            <a class="btn btn-md btn-primary float-right" href="{{ route('etl.dataware') }}">
                 GENERAR DATA WAREHOUSE
             </a>
     </div>
 
     <div class="form-group col-md-5">
-            <a class="btn btn-md btn-primary float-right" href="#">
+            <a class="btn btn-md btn-primary float-right" href="{{ route('etl.etl_base') }}">
                 GUARDAR
             </a>
     </div>

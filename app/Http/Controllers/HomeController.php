@@ -56,8 +56,8 @@ class HomeController extends Controller
             ]
         ];
 
-        Job::start()->extract('query', $query, $options)
-            ->transform('trim', ['columns' => ['nombre_aerolinea']])
+        Job::start()->extract('query', $query)
+            //->transform('trim', ['columns' => ['nombre_aerolinea']])
             ->load('table', 'registro_vuelos');
     }
 
