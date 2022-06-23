@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('configs')->insert([
+       /*
+         DB::table('configs')->insert([
             'name' => 'dias_cercanos',
             'label' => 'N# de dias cercanos para contar registros (5-15)',
             'value' => '7',
@@ -39,5 +40,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'administrador@vuelos.com.sv',
             'password' => Hash::make('adminvuelos2022'),
         ]);
+        */
+
+        \App\Models\Vuelo::factory(100)->create();
     }
 }

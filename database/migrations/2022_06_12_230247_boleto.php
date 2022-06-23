@@ -18,7 +18,7 @@ class Boleto extends Migration
             $table->id();
             $table->integer('pasajero_id');
             $table->integer('vuelo_id');
-            $table->datetime('llegada');
+            $table->datetime('llegada')->nullable();
             $table->timestamps();
         });
     }

@@ -8,7 +8,7 @@ use App\Models\ubicacion;
 
 class Pasajero extends Model
 {
-    // use HasFactory;
+    use HasFactory;
     protected $table = 'pasajeros';
 
     protected $fillable = [

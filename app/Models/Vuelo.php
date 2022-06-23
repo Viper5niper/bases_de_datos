@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vuelo extends Model
 {
-    // use HasFactory;
+    use HasFactory;
     protected $table = 'vuelos';
 
     protected $fillable = [

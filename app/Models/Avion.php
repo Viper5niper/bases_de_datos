@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Avion extends Model
 {
-    // use HasFactory;
+    use HasFactory;
     protected $table = 'aviones';
 
     // make fillable fields for the model 

@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PagoFactory extends Factory
+class AerolineaFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,7 +14,7 @@ class PagoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nombre' => $this->faker->company(),
         ];
     }
 }
