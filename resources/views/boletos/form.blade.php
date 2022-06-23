@@ -19,14 +19,30 @@
         </select>
     </div>
 
+    @section('plugins.DateRangePicker', true)
+    @php
+    $config = [
+        "singleDatePicker" => true,
+        "showDropdowns" => true,
+        "startDate" => "js:moment()",
+        "minYear" => 2000,
+        "maxYear" => "js:parseInt(moment().format('YYYY'),10)",
+        "timePicker" => true,
+        "timePicker24Hour" => true,
+        "timePickerSeconds" => true,
+        "cancelButtonClasses" => "btn-danger",
+        "locale" => ["format" => "YYYY-MM-DD HH:mm:ss"],
+        ];
+    @endphp
+
     <div class="form-group col-md-12">
-        <label for="id_llegada">Llegada</label>
-        <input type="date" name="llegada" class="form-control @error('llegada') is-invalid 
-        @enderror" id="id_llegada" placeholder="30/06/2022 07:00:00" value="{{old('llegada',$boleto->llegada)}}"
-            onKeyUp="n_llegada_mask(this);" required>
-        @error('llegada')
-        <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+        <x-adminlte-date-range name="llegada" label="Llegada"  :config="$config" value="{{old('llegada',$boleto->llegada)}}">
+            <x-slot name="llegada">
+                <div class="form-group col-md-6">
+                    <i class="fas fa-calendar-day"></i>
+                </div>
+            </x-slot>
+        </x-adminlte-date-range>
     </div>
 
     <div class="form-button pt-4 col-md-12"> <button type="submit" class="btn btn-success btn-block btn-lg"><span>{{$btnText}}</span></button> </div>

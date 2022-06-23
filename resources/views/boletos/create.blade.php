@@ -29,6 +29,9 @@
             </form>
         </div>
     </div>
+    @if($errors->any())
+    {{ implode('', $errors->all('<div>:message</div>')) }}
+    @endif
 </div>
 
 @stop
